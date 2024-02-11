@@ -1,0 +1,91 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $Primary;
+  position: sticky;
+  width: 100%;
+  top: 0%;
+  .menu {
+    display: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.75rem;
+    border: 1px solid red;
+    color: $Secondary;
+    &_bar {
+      width: 2.25rem;
+      height: 2rem;
+    }
+  }
+  .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: $Secondary;
+    // border: 1px solid red;
+    height: 50px;
+    
+    img{
+        height: 100%;
+        width: 50px;
+        // border: 1px solid red;
+        object-fit: cover;
+        border-radius: 50px;
+    }
+  }
+  ul {
+    display: flex;
+    gap:50px;
+    // border: 1px solid red;
+    li {
+      list-style: none;
+    //   border: 1px solid red; 
+    
+      a {
+        display: block;
+        text-decoration: none;
+        color: $Secondary;
+        padding: 0.5rem;
+        margin: 0 0.5rem;
+        border-radius: 0.5rem;
+        font-size: larger;
+      }
+      
+    }
+   
+  }
+}
+.active {
+  color: chartreuse;
+}
+
+
+
+//media query
+
+@include respond(phone){
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+        border: 1px solid red;
+        ul{
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            font-size: larger;
+           
+        }
+            .menu{
+                display: flex;
+            }
+    }
+}
+
+
+// for trigger
+nav ul.open{
+    display: flex;
+}
